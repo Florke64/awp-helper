@@ -7,6 +7,7 @@ fi
 
 ORIGIN_USER=$(whoami)
 
+# Returns True(0) if argument is True(0), exits script otherwise
 function test_fail() {
     local value=$1
 
