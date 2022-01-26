@@ -69,7 +69,7 @@ Start `awp.sh` and select `Uninstall` option at the bottom of menu.
 
 [![Youtube](https://img.youtube.com/vi/4gufe3x7oZA/0.jpg)](https://www.youtube.com/watch?v=4gufe3x7oZA)
 
-# License
+## License
 
 This repository is licensed under the free GPL-3.0 license.
 
