@@ -146,18 +146,18 @@ fi
 # Enable Autostart
 if [ "$INPUT" == "Enable Autostart" ]; then
     cp "$Appdir/awp-autostart.desktop" "$HOME/.config/autostart/" 
-    sh "$Appdir/awp.sh"
+    "$Appdir/awp.sh"
 fi
 
 # Disable Autostart
 if [ "$INPUT" == "Disable Autostart" ]; then
   rm -f "$HOME/.config/autostart/awp-autostart.desktop"
-  sh "$Appdir/awp.sh"
+  "$Appdir/awp.sh"
 fi
 
 # Uninstall
 if [ "$INPUT" == "Uninstall" ]; then
-    sh "$Appdir/uninstall.sh"
+    "$Appdir/uninstall.sh"
 fi
 
 # About Animated Wallpaper and Animated Wallpaper Helper
@@ -167,5 +167,5 @@ if [ "$INPUT" == "About" ]; then
         --filename=$FILEABOUT \
         --width=600 --height=500 \
 
-    sh "$Appdir/awp.sh"
+    "$Appdir/awp.sh"
 fi
