@@ -222,9 +222,11 @@ if [ "$STATUS" == "OK" ]; then
     esac
 
 else
-    echo "Sorry but the Installer does not work on your system!"
-    echo "Fedora, Arch Linux, Manjaro and Ubuntu supported"
+    err_os=(
+        "Sorry but the Installer does not work on your system!"
+        "Fedora, Arch Linux, Manjaro and Ubuntu are currently supported."
+    )
 
-    zenity --error \
-    --text="Sorry but the Installer does not work on your system! Fedora, Arch Linux, Manjaro and Ubuntu supported"
+    echo -e "${err_os[0]}\n${err_os[1]}"
+    zenity --error --width=360 --text="${err_os[0]} ${err_os[1]}"
 fi
