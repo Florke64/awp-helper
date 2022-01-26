@@ -68,5 +68,4 @@ Reload GNOME - if using X11: press `F2`, type `r` and press `Enter ⏎ ` (may no
 This repository is licensed under the free GPL-3.0 license.
 
 When we speak of free software, we are referring to freedom, not price. [...] you have the freedom to distribute copies of free software (and charge for them if you wish).
-
 > Please read a [LICENSE](/LICENSE) file for more details.
