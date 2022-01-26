@@ -95,7 +95,6 @@ elif [[ "$OS" == "Arch Linux" ]]; then
     zenity --question --width 500\
     --text="Arch Linux Detected. Is this correct?"
 
-    
     if (( $((`test_fail $?`)) == 0 )); then
         echo "Renewing Package Database"
         echo "$PASS" | sudo -S pacman -Sy
@@ -107,7 +106,6 @@ elif [[ "$OS" == "Ubuntu" ]]; then
     # Ubuntu
     zenity --question --width 500\
     --text="Ubuntu Detected. Is this correct?"
-    
     
     if (( $((`test_fail $?`)) == 0 )); then
         echo "Renewing Package Database"
@@ -141,7 +139,7 @@ if [ "$STATUS" == "OK" ]; then
     zenity --question --width 500\
         --text="Animated Wallpapers was installed successfully. Do you want to start the script now?"
 
-    
+    # Starting script right now, if user choose to
     if (( $((`test_fail $?`)) == 0 )); then
         echo "Start Animated Wallpaper"
         sudo -u $ORIGIN_USER "/usr/local/share/awp/awp.sh"
