@@ -48,7 +48,7 @@ Move the `.desktop` file to `/usr/share/applications/`
 Add 'x' attribute to the files (execute permission)  
 > ```bash
 > sudo chmod +x "/usr/local/share/awp/awp.sh"
-> chmod +x "/usr/local/share/awp/awp_autostart.sh"
+> chmod +x "/usr/local/share/awp/awp-autostart.sh"
 > ```
 Reload GNOME - if using X11: press `F2`, type `r` and press `Enter ⏎ ` (may not be always needed).
 
