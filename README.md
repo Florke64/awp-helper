@@ -12,12 +12,13 @@ It provides automated installation script, as well as uninstall script.
 
 It uses [animated-wallpaper](https://github.com/Ninlives/animated-wallpaper) program, which is intended for [GNOME Desktop Enviorement](https://www.gnome.org/) - so this is primary requirement.
 
-1. sudo (for automatic installation and uninstallation)
+- sudo permissions (for automatic installation and uninstallation)
+- [zenity](https://gitlab.gnome.org/GNOME/zenity) (should be already shipped with GNOME)
 
-### shipped by install.sh:
-2. [ffmpeg](https://git.ffmpeg.org/ffmpeg.git)
-3. [youtube-dl](http://ytdl-org.github.io/youtube-dl/)
-4. [animated-wallpaper](https://github.com/Ninlives/animated-wallpaper)
+## Shipped by [install.sh](/install.sh):
+- [ffmpeg](https://git.ffmpeg.org/ffmpeg.git)
+- [youtube-dl](http://ytdl-org.github.io/youtube-dl/)
+- [animated-wallpaper](https://github.com/Ninlives/animated-wallpaper)
 
 
 # Installation
