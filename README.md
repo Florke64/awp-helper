@@ -51,6 +51,12 @@ Add 'x' attribute to the files (execute permission)
 > ```
 Reload GNOME - if using X11: press `F2`, type `r` and press `Enter ⏎ ` (may not be always needed).
 
+## Uninstallation
+
+Start `awp.sh` and select `Uninstall` option at the bottom of menu.
+> You can also manually uninstall using `uninstall.sh` script, bundled in repository.
+
+
 # Notice:
 > The **X11 version** of GNOME is **recommended** for this, as this will only work on a Wayland workspace.
 
