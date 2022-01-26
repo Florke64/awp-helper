@@ -131,6 +131,7 @@ elif [[ "$OS" == "Manjaro Linux" ]]; then
         exit 0
         ;;
     esac
+
 elif [[ "$OS" == "Arch Linux" ]]; then
     # Arch
     zenity --question --width 500\
@@ -178,9 +179,9 @@ elif [[ "$OS" == "Ubuntu" ]]; then
         exit 0
         ;;
     esac
-    
+        
 else
-    echo "This OS is not Supported!"        
+    echo "This OS is not Supported!"
 fi
 
 if [ "$STATUS" == "OK" ]; then
@@ -200,7 +201,7 @@ if [ "$STATUS" == "OK" ]; then
     echo "$PASS" | sudo -S chmod +x /usr/local/share/awp/awp-autostart.sh
 
     echo "Animated Wallpapers was installed successfully."
-    
+
     zenity --question --width 500\
         --text="Animated Wallpapers was installed successfully. Do you want to start the script now?"
 
@@ -210,8 +211,8 @@ if [ "$STATUS" == "OK" ]; then
         sudo -u $ORIGIN_USER sh "/usr/local/share/awp/awp.sh"
         ;;
     1) 
+        echo "Exitting..."
         exit 0
-        echo Close
         ;;
     -1)
         zenity --info --width 500\
