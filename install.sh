@@ -72,10 +72,9 @@ if [ "$OS" == "Fedora Linux" ]; then
         --text="Fedora Detected. It needs to intigrate the rpmfusion repository for ffmpeg. Do you agree with this?"
 
     if (( $((`test_fail $?`)) == 0 )); then
-        echo Installing Fedora Dependencies
-        echo Add rpmfusion repository for ffmpeg
+        echo -e "Installing Fedora Dependencies\nAdd rpmfusion repository for ffmpeg"
         echo "$PASS" | sudo -S dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm 
-        echo Installing dev tools and dependencies
+        echo "Installing dev tools and dependencies"
         echo "$PASS" | sudo -S dnf install -y cmake gcc-c++ vala pkgconfig gtk3-devel clutter-devel clutter-gtk-devel clutter-gst3-devel youtube-dl ffmpeg && STATUS="OK"
     fi
             
@@ -85,9 +84,9 @@ elif [[ "$OS" == "Manjaro Linux" ]]; then
     --text="Manjaro Detected. Is this correct?"
     
     if (( $((`test_fail $?`)) == 0 )); then
-        echo Renewing Package Database
+        echo "Renewing Package Database"
         echo "$PASS" | sudo -S pacman -Sy
-        echo Installing Manjaro Dependencies  
+        echo "Installing Manjaro Dependencies"  
         echo "$PASS" | sudo -S pacman -S base-devel ffmpeg youtube-dl cmake vala pkgconfig gtk3 clutter clutter-gtk clutter-gst gst-libav --noconfirm && STATUS="OK"
     fi
 
@@ -98,9 +97,9 @@ elif [[ "$OS" == "Arch Linux" ]]; then
 
     
     if (( $((`test_fail $?`)) == 0 )); then
-        echo Renewing Package Database
+        echo "Renewing Package Database"
         echo "$PASS" | sudo -S pacman -Sy
-        echo Installing Arch Linux Dependencies       
+        echo "Installing Arch Linux Dependencies"       
         echo "$PASS" | sudo -S pacman -S git base-devel ffmpeg youtube-dl cmake vala pkgconfig gtk3 clutter clutter-gtk clutter-gst gst-libav --noconfirm && STATUS="OK"
     fi
 
@@ -111,9 +110,9 @@ elif [[ "$OS" == "Ubuntu" ]]; then
     
     
     if (( $((`test_fail $?`)) == 0 )); then
-        echo Renewing Package Database
+        echo "Renewing Package Database"
         echo "$PASS" | sudo -S apt-get update
-        echo Installing Ubuntu Dependencies       
+        echo "Installing Ubuntu Dependencies"       
         echo "$PASS" | sudo -S apt install git ffmpeg youtube-dl valac cmake pkg-config libgtk-3-dev libclutter-gtk-1.0-dev libclutter-gst-3.0-dev build-essential --yes && STATUS="OK" 
     fi
         
@@ -144,7 +143,7 @@ if [ "$STATUS" == "OK" ]; then
 
     
     if (( $((`test_fail $?`)) == 0 )); then
-        echo Start Animated Wallpaper
+        echo "Start Animated Wallpaper"
         sudo -u $ORIGIN_USER sh "/usr/local/share/awp/awp.sh"
     fi
 
