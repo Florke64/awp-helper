@@ -144,7 +144,7 @@ if [ "$STATUS" == "OK" ]; then
     
     if (( $((`test_fail $?`)) == 0 )); then
         echo "Start Animated Wallpaper"
-        sudo -u $ORIGIN_USER sh "/usr/local/share/awp/awp.sh"
+        sudo -u $ORIGIN_USER "/usr/local/share/awp/awp.sh"
     fi
 
 else
