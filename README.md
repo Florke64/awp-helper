@@ -37,18 +37,18 @@ It uses [animated-wallpaper](https://github.com/Ninlives/animated-wallpaper) pro
 
 Move the folder `awp` to `/usr/local/share/`
 > ```bash
-> sudo mv -r "awp" "/usr/local/share/awp"
+> sudo cp -r "awp" "/usr/local/share/awp"
 > ```
 
 Move the `.desktop` file to `/usr/share/applications/`
 > ```bash
-> sudo mv -r *."desktop" "/usr/share/applications/"
+> sudo cp -r *."desktop" "/usr/share/applications/"
 > ```
 
 Add 'x' attribute to the files (execute permission)  
 > ```bash
 > sudo chmod +x "/usr/local/share/awp/awp.sh"
-> chmod +x "/usr/local/share/awp/awp-autostart.sh"
+> sudo chmod +x "/usr/local/share/awp/awp-autostart.sh"
 > ```
 Reload GNOME - if using X11: press `F2`, type `r` and press `Enter ⏎ ` (may not be always needed).
 
