@@ -45,7 +45,7 @@ fi
 
 # Checking if provided password is correct
 echo "$PASS" | sudo -S -k -v
-if [ $(`test_fail $?`) -eq 0 ]; then
+if (( $((`test_fail $?`)) == 0 )); then
     echo "Verified sudo privileges."
 fi
 
@@ -71,7 +71,7 @@ if [ "$OS" == "Fedora Linux" ]; then
     zenity --question --width 500\
         --text="Fedora Detected. It needs to intigrate the rpmfusion repository for ffmpeg. Do you agree with this?"
 
-    if [ $(`test_fail $?`) -eq 0 ]; then
+    if (( $((`test_fail $?`)) == 0 )); then
         echo Installing Fedora Dependencies
         echo Add rpmfusion repository for ffmpeg
         echo "$PASS" | sudo -S dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm 
@@ -84,7 +84,7 @@ elif [[ "$OS" == "Manjaro Linux" ]]; then
     zenity --question --width 500\
     --text="Manjaro Detected. Is this correct?"
     
-    if [ $(`test_fail $?`) -eq 0 ]; then
+    if (( $((`test_fail $?`)) == 0 )); then
         echo Renewing Package Database
         echo "$PASS" | sudo -S pacman -Sy
         echo Installing Manjaro Dependencies  
@@ -97,7 +97,7 @@ elif [[ "$OS" == "Arch Linux" ]]; then
     --text="Arch Linux Detected. Is this correct?"
 
     
-    if [ $(`test_fail $?`) -eq 0 ]; then
+    if (( $((`test_fail $?`)) == 0 )); then
         echo Renewing Package Database
         echo "$PASS" | sudo -S pacman -Sy
         echo Installing Arch Linux Dependencies       
@@ -110,7 +110,7 @@ elif [[ "$OS" == "Ubuntu" ]]; then
     --text="Ubuntu Detected. Is this correct?"
     
     
-    if [ $(`test_fail $?`) -eq 0 ]; then
+    if (( $((`test_fail $?`)) == 0 )); then
         echo Renewing Package Database
         echo "$PASS" | sudo -S apt-get update
         echo Installing Ubuntu Dependencies       
@@ -143,7 +143,7 @@ if [ "$STATUS" == "OK" ]; then
         --text="Animated Wallpapers was installed successfully. Do you want to start the script now?"
 
     
-    if [ $(`test_fail $?`) -eq 0 ]; then
+    if (( $((`test_fail $?`)) == 0 )); then
         echo Start Animated Wallpaper
         sudo -u $ORIGIN_USER sh "/usr/local/share/awp/awp.sh"
     fi
